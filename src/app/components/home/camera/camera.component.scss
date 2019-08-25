@@ -1,3 +1,18 @@
 #event{
     display: none !important;
 }
+.card{
+    width: 100%;
+}
+.contenedor{
+    width: 100%;
+    border: 1px solid;
+    position: relative;
+    i{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem;
+    }
+}

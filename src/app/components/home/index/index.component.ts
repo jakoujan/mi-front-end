@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  } from '../camera/camera.component';
 
 @Component({
     selector: 'index-component',
@@ -12,6 +13,6 @@ export class IndexComponent implements OnInit{
 
     }
     ngOnInit(){
-
+        document.getElementById('event').click()
     }
 }

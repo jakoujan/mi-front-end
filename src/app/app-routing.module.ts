@@ -10,7 +10,8 @@ import { LoginService } from './services/service-login/login.service'
 //Angular material
 import { 
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatCardModule
  } from '@angular/material';
 //Components
 import { HomeComponent } from './components/home/home.component';
@@ -20,6 +21,7 @@ import { HeaderComponent } from './common/header/header.component';
 import { LogoComponent } from './common/logo/logo.component';
 import { MenuComponent } from './common/menu/menu.component';
 import { CameraComponent } from './components/home/camera/camera.component';
+import { VisionService } from './services/vision.service';
 
 
 
@@ -50,7 +52,8 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
   exports: [
     RouterModule,
@@ -63,7 +66,8 @@ const routes: Routes = [
     CameraComponent
   ],
   providers: [
-     LoginService
+     LoginService,
+    VisionService
   ]
 })
 export class AppRoutingModule { }
