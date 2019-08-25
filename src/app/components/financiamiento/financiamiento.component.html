@@ -2,14 +2,18 @@
     <div class="row">
         <div class="col-12">
             <h1 class="title">Credito Elektra</h1>
-            <div class="cont" *ngFor="let product of products">
+            <div class="cont">
                 <div class="img-product"> 
-                    <img src="{{product.imageUrl}}" alt="">
+                    <img src="{{products.imageUrl}}" alt="">
                 </div>
                 <div class="texto-product">
-                    <p class="n-product">{{product.description}}</p>
-                    <p class="p-product">{{product.price | currency}}</p>
+                    <p class="n-product">{{products.description}}</p>
+                    <p class="p-product">{{products.price | currency}}</p>
                 </div>
+                <p>72 semanas de $41.66 pesos</p>
+                <p>$167 pesos mensuales</p>
+                <p>Total de credito: <span>$7339.00</span></p>
+                <p>Usted pagaría: $319.00 pesos mensuales</p>
             </div>
         </div>
     </div>

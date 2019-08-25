@@ -9,6 +9,11 @@ import { PersistenceService, StorageType } from 'angular-persistence';
 
 export class FinanciamientoComponent implements OnInit{
     products:any
+    opciones: any[] = [
+        {value: '18 meses', viewValue: '18 meses'},
+        {value: '12 meses', viewValue: '12 meses'},
+        {value: '6 meses', viewValue: '6 meses'}
+      ];
     constructor(private persistenceService : PersistenceService){
 
     }
