@@ -23,3 +23,21 @@ div.titulo {
     max-width: 250px;
     margin: 10px 0 0 0;
 }
+.option{
+    width: 100%;
+}
+.mat-form-field{
+    width: 100%;
+}
+.btn-aceptar{
+    display: block;
+    background-color: #e1251b;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    color: white;
+    padding: 5px 10px;
+    margin: 0 auto 5px auto;
+    width: 200px;
+    cursor: pointer;
+}   

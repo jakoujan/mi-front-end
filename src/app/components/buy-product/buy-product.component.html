@@ -1,5 +1,5 @@
 <div class="titulo">Comprar Articulo</div>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 3rem;">
   <div class="row">
     <mat-card class="card">
       <img mat-card-image [src]="product.imageUrl" alt="Producto">
@@ -14,23 +14,17 @@
     <div class="col">
       <form [formGroup]="formbuy">
         <div class="form-group">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Usuario" formControlName="user">
-            <mat-error *ngIf="formbuy.get('user').hasError('required') && formbuy.get('user').touched">
-              Correo electrónico es <strong>requerido</strong>
-            </mat-error>
+          <mat-form-field>
+            <mat-label>Forma de pago</mat-label>
+            <mat-select formControlName="pago">
+                <mat-option *ngFor="let item of opciones" [value]="item.value">
+                  {{item.viewValue}}
+                </mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
         <div class="form-group">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Contraseña" formControlName="password">
-            <mat-error *ngIf="formbuy.get('password').hasError('required') && formbuy.get('password').touched">
-              La contraseña es <strong>requerido</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        <div class="form-group">
-          <button (click)="index()">Aceptar</button>
+          <button (click)="payment()" class="btn-aceptar">Comprar</button>
         </div>
       </form>
     </div>

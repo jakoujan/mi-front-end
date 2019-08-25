@@ -11,7 +11,8 @@ import { LoginService } from './services/service-login/login.service'
 import {
   MatFormFieldModule,
   MatInputModule,
-  MatCardModule
+  MatCardModule,
+  MatSelectModule
  } from '@angular/material';
 
 //Components
@@ -26,6 +27,8 @@ import { VisionService } from './services/vision.service';
 import { ProductCatalogService } from './services/product-catalog.service';
 import { ProductCatalogComponent } from './components/product-catalog/product-catalog.component';
 import { BuyProductComponent } from './components/buy-product/buy-product.component';
+import { QrComponent } from './components/qr-image/qr.component';
+import { FinanciamientoComponent } from './components/financiamiento/financiamiento.component';
 
 
 
@@ -36,7 +39,9 @@ const routes: Routes = [
     children: [
       { path: '', component: IndexComponent },
       { path: 'productos', component: ProductCatalogComponent },
-      { path: 'producto/comprar', component: BuyProductComponent }
+      { path: 'producto/comprar', component: BuyProductComponent },
+      { path: 'producto/comprar/qr', component: QrComponent },
+      { path: 'financiamiento', component: FinanciamientoComponent }
     ]
   }
 
@@ -52,7 +57,9 @@ const routes: Routes = [
     MenuComponent,
     CameraComponent,
     ProductCatalogComponent,
-    BuyProductComponent
+    BuyProductComponent,
+    QrComponent,
+    FinanciamientoComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +70,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
   ],
   exports: [
     RouterModule,
@@ -73,7 +81,9 @@ const routes: Routes = [
     HeaderComponent,
     LogoComponent,
     MenuComponent,
-    CameraComponent
+    CameraComponent,
+    QrComponent,
+    FinanciamientoComponent
   ],
   providers: [
     LoginService,
