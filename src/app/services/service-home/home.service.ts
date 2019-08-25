@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IRecognize } from 'src/app/entity/recognize';
 import { IResponse } from 'src/app/entity/response';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 
 export class HomeService {
-    url:string = 'http://10.0.2.125:8080/security/visionService'
+    url:string = environment.url + '/security/visionService'
     httpOptions = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json'

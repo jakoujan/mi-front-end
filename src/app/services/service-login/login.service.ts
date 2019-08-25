@@ -3,11 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { IResponse } from 'src/app/entity/response';
 import { IUser } from 'src/app/entity/user';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable()
 
 export class LoginService {
-    url: string = 'http://10.0.2.125:8080/security/login'
+    url: string = environment.url + '/security/login'
     constructor(private http: HttpClient) { }
     httpOptions = {
         headers: new HttpHeaders({

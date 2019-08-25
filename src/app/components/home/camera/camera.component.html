@@ -1,28 +1,29 @@
 <form (ngSubmit)="onFileSelected(formCamera.value)" [formGroup]="formCamera">
-    <input id="event" type="file" name="image" (change)="onFileChange($event)" >
+    <input id="event" type="file" name="image" (change)="onFileChange($event)">
 </form>
-<div class="container">
-    <div class="row" [hidden]="hidden">
+<div class="container-fluid">
+    <div class="row"  [hidden]="hidden">
         <div class="col-12">
             <div class="contenedor" (click)="activeCamera()">
                 <i class="fa fa-camera"></i>
             </div>
         </div>
     </div>
-    <div class="row" *ngIf="!products">
-        <p>{{msj}}</p>
-    </div>
-    <div class="row">
-        <div class="col-6" *ngFor="let item of products">
-            <p>Productos relacionados</p>
-            <div class="card">
-                <div class="image">
-                    <img [src]="item.imageUrl" alt="products">
-                </div>
-                <div class="content">
-                    <p>{{item.description}}</p>
-                    <p>${{item.price}}</p>
-                </div>
+    <div class="scroller">
+        <div class="row" *ngFor="let item of products">
+            <div class="col-12">
+                <mat-card class="card">
+                    <img mat-card-image [src]="item.imageUrl" alt="Producto">
+                    <mat-card-content>
+                        <p class="description">{{item.description}}</p>
+                        <p class="price">${{item.price}}</p>
+                        <p class="color">Color: {{item.color}}</p>
+                        <div class="buttons">
+                            <button (click)="buyProduct(item)">Comprar</button>
+                            <button>Solicitar credito</button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
             </div>
         </div>
     </div>

@@ -1,7 +1,9 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { VisionService } from 'src/app/services/vision.service';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { IProduct } from 'src/app/entity/product';
+import { PersistenceService, StorageType } from 'angular-persistence';
 
 @Component({
     selector: 'camera',
@@ -9,56 +11,58 @@ import { Router } from '@angular/router';
     styleUrls: ['camera.component.scss']
 })
 
-export class CameraComponent implements OnInit{
-    formCamera: FormGroup
+export class CameraComponent implements OnInit {
+    formCamera: FormGroup;
+    hidden: boolean = false;
     foto = {
         hash: null
     }
-    hidden:boolean = false
-    products:any
-    msj:string
+
+    products: any
 
     constructor(
-        private fb : FormBuilder,
-        private visionService : VisionService,
+        private fb: FormBuilder,
+        private visionService: VisionService,
         private cd: ChangeDetectorRef,
-        private router : Router
-        ){
+        private router: Router,
+        private persistenceService: PersistenceService
+    ) {
 
     }
 
-    ngOnInit(){
+    ngOnInit() {
         this.formCamera = this.fb.group({
             hash: [null, [Validators.required]]
         })
     }
 
-    activeCamera(){
+    activeCamera() {
         document.getElementById('event').click()
     }
 
-    onFileSelected(valor){
+    onFileSelected(valor) {
         console.log(valor)
         this.visionService.recognize(valor).then(response => {
-                if(response){
-                    this.products = response.fields.products
-                    console.log('response: ',response)
-                    console.log('Productos: ', this.products)
-                    this.hidden = true
+            if (response) {
+                this.hidden = true;
+                this.products = response.fields.products
+                console.log('response: ', response)
+                console.log('Productos: ', this.products)
+                this.hidden = true
 
-                }else{
-                    console.log('no llega')
-                }
+            } else {
+                console.log('no llega')
             }
+        }
         )
     }
-    onFileChange(event){
+    onFileChange(event) {
         let reader = new FileReader();
 
-        if(event.target.files && event.target.files.length){
+        if (event.target.files && event.target.files.length) {
             const [file] = event.target.files;
             reader.readAsDataURL(file);
-        
+
             reader.onload = () => {
 
                 let str = reader.result;
@@ -74,6 +78,11 @@ export class CameraComponent implements OnInit{
                 this.onFileSelected(this.foto)
             }
         }
+    }
+
+    buyProduct(product: IProduct) {
+        this.persistenceService.set('product', product, {type: StorageType.SESSION, oneUse: true});
+        this.router.navigate(['/home/producto/comprar']);
     }
 
 }

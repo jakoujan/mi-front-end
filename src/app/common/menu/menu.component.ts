@@ -17,8 +17,10 @@ export class MenuComponent implements OnInit {
 
     }
     callCamera() {
-        this.router.navigate(['/home'])
-        document.getElementById('event').click()
+        this.router.navigate(['/home']).then(res => {
+            document.getElementById('event').click();
+        });
+        
     }
 
     callProductCatalog() {
