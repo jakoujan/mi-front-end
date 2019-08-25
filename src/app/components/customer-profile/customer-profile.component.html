@@ -1,0 +1,34 @@
+<div class="container2">
+  <div class="card-user">
+    <div class="label">Tus datos personales</div>
+    <div class="img-sesion">
+      <img
+        src="https://img2.freepng.es/20180401/rle/kisspng-computer-icons-user-profile-male-user-5ac10d05430db1.7381637515226012212747.jpg">
+    </div>
+
+    <div class="cont-datos-client">
+      <p><b>Nombre:</b> {{customer.customerName}}</p>
+      <p><b>Dirección:</b> {{customer.address}}</p>
+    </div>
+  </div>
+  <div class="label">Tus creditos activos</div>
+  <div class="container-creditos">
+    <div class="cont" *ngFor="let credit of customer.customerCredits">
+      <div class="img-product">
+        <img src="{{credit.product.imageUrl}}">
+      </div>
+      <div class="texto-product">
+        <p class="n-product">{{credit.product.description}}</p>
+        <p class="carac-prod">SKU: {{credit.product.sku}}</p>
+        <p class="carac-prod">{{credit.product.price | currency}}</p>
+        <p class="carac-prod">{{credit.plan}}</p>
+        <p class="carac-prod">{{credit.paymentType}}</p>
+        <p class="carac-prod">No pagos: {{credit.payments}}</p>
+        <p class="carac-prod">Pagos realizados: {{credit.totalPayments}}</p>
+        <p class="carac-prod">Total pagado: $ 4,598</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -6,21 +6,26 @@
         <div class="col-12">
             <div class="contenedor" (click)="activeCamera()">
                 <i class="fa fa-camera"></i>
+                <p class="instructions">Toma una foto del producto de tu interés y te ayudamos a encontrar las mejores
+                    ofertas</p>
             </div>
         </div>
+    </div>
+    <div class="titulo" [hidden]="!hidden">
+        Aquí están nuestras sugerencias
     </div>
     <div class="scroller">
         <div class="row" *ngFor="let item of products">
             <div class="col-12">
                 <mat-card class="card">
+                    <p class="description">{{item.description}}</p>
                     <img mat-card-image [src]="item.imageUrl" alt="Producto">
                     <mat-card-content>
-                        <p class="description">{{item.description}}</p>
-                        <p class="price">${{item.price}}</p>
+                        <p class="price">Precio: {{item.price | currency }}</p>
                         <p class="color">Color: {{item.color}}</p>
                         <div class="buttons">
-                            <button (click)="buyProduct(item)">Comprar</button>
-                            <button>Solicitar credito</button>
+                            <button class="credit">Solicitar credito</button>
+                            <button class="cash" (click)="buyProduct(item)">Comprar</button>
                         </div>
                     </mat-card-content>
                 </mat-card>

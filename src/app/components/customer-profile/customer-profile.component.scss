@@ -1,0 +1,97 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+}
+
+.container2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    padding-bottom: 90px;
+}
+
+
+
+.cont {
+    width: 46%;
+    padding: 10px 15px;
+
+}
+
+.img-product {
+    width: 65%;
+    margin: 10px auto;
+}
+
+.img-product img {
+    width: 100%;
+}
+
+.texto-product {
+    width: 100%;
+    text-align: center;
+
+}
+
+.n-product {
+    font-weight: 900;
+    color: gray;
+    font-size: 20px;
+}
+
+.p-product {
+    font-weight: 900;
+    color: black;
+    font-size: 20px;
+}
+
+.img-sesion {
+    margin: 0px auto 20px auto;
+    width: 150px;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.img-sesion img {
+    width: 100%;
+}
+
+.cont-datos-client {
+    width: 300px;
+    margin: 0px auto;
+    font-size: 15px;
+
+}
+
+.container-creditos {
+    width: 90%;
+    margin: 0px auto;
+
+}
+
+
+
+.container-creditos .cont {
+    width: 90%;
+    border: 1px solid gray;
+    padding: 5px;
+    margin: 5px auto 10px auto;
+    border-radius: 10px;
+}
+
+.carac-prod {
+    font-size: 16px;
+    line-height: 1px;
+}
+
+div.label {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 20px 0 10px 0;
+}

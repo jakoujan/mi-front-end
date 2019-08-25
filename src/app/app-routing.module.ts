@@ -29,6 +29,8 @@ import { ProductCatalogComponent } from './components/product-catalog/product-ca
 import { BuyProductComponent } from './components/buy-product/buy-product.component';
 import { QrComponent } from './components/qr-image/qr.component';
 import { FinanciamientoComponent } from './components/financiamiento/financiamiento.component';
+import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
+
 
 
 
@@ -41,7 +43,9 @@ const routes: Routes = [
       { path: 'productos', component: ProductCatalogComponent },
       { path: 'producto/comprar', component: BuyProductComponent },
       { path: 'producto/comprar/qr', component: QrComponent },
-      { path: 'financiamiento', component: FinanciamientoComponent }
+      { path: 'financiamiento', component: FinanciamientoComponent },
+      { path: 'customer/profile', component: CustomerProfileComponent }
+
     ]
   }
 
@@ -59,7 +63,8 @@ const routes: Routes = [
     ProductCatalogComponent,
     BuyProductComponent,
     QrComponent,
-    FinanciamientoComponent
+    FinanciamientoComponent,
+    CustomerProfileComponent
   ],
   imports: [
     CommonModule,
