@@ -14,7 +14,7 @@
     <div class="titulo" [hidden]="!hidden">
         Aquí están nuestras sugerencias
     </div>
-    <div class="scroller">
+    <div class="scroller" [hidden]="!hidden">
         <div class="row" *ngFor="let item of products">
             <div class="col-12">
                 <mat-card class="card">

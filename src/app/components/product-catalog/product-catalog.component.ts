@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductCatalogService } from 'src/app/services/product-catalog.service';
 import { IProduct } from 'src/app/entity/product';
+import { PersistenceService, StorageType } from 'angular-persistence';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-catalog',
@@ -9,7 +11,7 @@ import { IProduct } from 'src/app/entity/product';
 })
 export class ProductCatalogComponent implements OnInit {
 
-  constructor(private productService: ProductCatalogService) {
+  constructor(private productService: ProductCatalogService, private persistenceService: PersistenceService, private router: Router) {
 
   
   }
@@ -21,5 +23,10 @@ export class ProductCatalogComponent implements OnInit {
       this.products = response.fields.products;
     })
   }
+
+  buyProduct(product: IProduct) {
+    this.persistenceService.set('product', product, {type: StorageType.SESSION, oneUse: true});
+    this.router.navigate(['/home/producto/comprar']);
+}
 
 }
