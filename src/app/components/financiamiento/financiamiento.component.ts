@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PersistenceService, StorageType } from 'angular-persistence';
 
 @Component({
     selector: 'financiamiento',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class FinanciamientoComponent implements OnInit{
-    
-    constructor(){
+    products:any
+    constructor(private persistenceService : PersistenceService){
 
     }
     ngOnInit(){
-
+        this.products = this.persistenceService.get('product', StorageType.SESSION);
+        console.log(this.products)
     }
 }

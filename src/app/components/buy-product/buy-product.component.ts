@@ -4,6 +4,7 @@ import { IProduct } from 'src/app/entity/product';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-buy-product',
   templateUrl: './buy-product.component.html',
@@ -42,6 +43,7 @@ export class BuyProductComponent implements OnInit {
     if(this.formbuy.controls.pago.value === 'contado'){
       this.router.navigate(['/home/producto/comprar/qr'])
     }else{
+      this.persistenceService.set('product', this.product, {type: StorageType.SESSION, oneUse: true})
       this.router.navigate(['/home/producto/comprar/financiamiento'])
     }
   }
