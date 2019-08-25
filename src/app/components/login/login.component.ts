@@ -32,7 +32,9 @@ export class LoginComponent implements OnInit {
     index() {
         this.loginService.login({ user: this.formLogin.get('user').value, password: this.formLogin.get('password').value }).then((response) => {
             console.log("Ejecutando", response);
-            this.router.navigate(['/home'])
+            this.router.navigate(['/home']).then(res => {
+                document.getElementById('event').click();
+            });
         })
 
     }
