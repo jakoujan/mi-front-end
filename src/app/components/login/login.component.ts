@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/service-login/login.service';
 
@@ -8,30 +8,32 @@ import { LoginService } from '../../services/service-login/login.service';
     templateUrl: 'login.component.html',
     styleUrls: ['login.component.scss']
 })
-export class LoginComponent implements OnInit{
-    
+export class LoginComponent implements OnInit {
+
     formLogin: FormGroup;
-    result:any
+    result: any
 
-    constructor(private fb : FormBuilder, private router : Router, private loginService : LoginService){
+    constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService) {
 
     }
 
-    ngOnInit(){
+    ngOnInit() {
         this.buildForm()
-        this.loginService.logIn().subscribe((response)=> {
-             console.log(response)
-        })
+
 
     }
 
-    buildForm(){
-        this.formLogin =  this.fb.group({
+    buildForm() {
+        this.formLogin = this.fb.group({
             user: ['', [Validators.required]],
             password: ['', [Validators.required]]
         })
     }
-    index(){
-        this.router.navigate(['/home'])
+    index() {
+        this.loginService.login({ user: this.formLogin.get('user').value, password: this.formLogin.get('password').value }).then((response) => {
+            console.log("Ejecutando", response);
+            this.router.navigate(['/home'])
+        })
+
     }
 }
