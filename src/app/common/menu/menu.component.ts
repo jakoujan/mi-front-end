@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -7,16 +8,21 @@ import { Component, OnInit, ViewChild } from '@angular/core';
     styleUrls: ['menu.component.scss']
 })
 
-export class MenuComponent implements OnInit{
-    constructor(){
+export class MenuComponent implements OnInit {
+    constructor(private router: Router) {
 
     }
 
-    ngOnInit(){
+    ngOnInit() {
 
     }
-    callCamera(){
+    callCamera() {
         console.log('me clickeaste');
         document.getElementById('event').click()
+    }
+
+    callProductCatalog() {
+        console.log('me clickeaste');
+        this.router.navigate(['/productos'])
     }
 }

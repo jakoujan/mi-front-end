@@ -1,36 +1,43 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 //services
-import { LoginService } from './services/service-login/login.service'
+import { LoginService } from './services/service-login/login.service'
 //Angular material
-import { 
+import {
   MatFormFieldModule,
   MatInputModule,
   MatCardModule
  } from '@angular/material';
+
 //Components
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { IndexComponent } from './components/home/index/index.component';
-import { HeaderComponent } from './common/header/header.component';
+import { IndexComponent } from './components/home/index/index.component';
+import { HeaderComponent } from './common/header/header.component';
 import { LogoComponent } from './common/logo/logo.component';
 import { MenuComponent } from './common/menu/menu.component';
 import { CameraComponent } from './components/home/camera/camera.component';
 import { VisionService } from './services/vision.service';
+import { ProductCatalogService } from './services/product-catalog.service';
+import { ProductCatalogComponent } from './components/product-catalog/product-catalog.component';
+
 
 
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'home', component: HomeComponent, 
+  {
+    path: 'home', component: HomeComponent,
     children: [
-      {path: '', component: IndexComponent}
-    ]}
+      { path: '', component: IndexComponent },
+      { path: 'productos', component: ProductCatalogComponent }
+    ]
+  }
 
 ];
 
@@ -39,10 +46,11 @@ const routes: Routes = [
     HomeComponent,
     LoginComponent,
     IndexComponent,
-    HeaderComponent,
+    HeaderComponent,
     LogoComponent,
     MenuComponent,
-    CameraComponent
+    CameraComponent,
+    ProductCatalogComponent
   ],
   imports: [
     CommonModule,
@@ -60,14 +68,18 @@ const routes: Routes = [
     HomeComponent,
     LoginComponent,
     IndexComponent,
-    HeaderComponent,
+    HeaderComponent,
     LogoComponent,
     MenuComponent,
-    CameraComponent
+    CameraComponent,
+    ProductCatalogComponent
   ],
   providers: [
-     LoginService,
-    VisionService
+    LoginService,
+    VisionService,
+    LoginService,
+    VisionService,
+    ProductCatalogService
   ]
 })
 export class AppRoutingModule { }

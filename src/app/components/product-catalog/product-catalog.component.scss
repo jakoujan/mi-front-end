@@ -1,0 +1,38 @@
+.container{
+    width: 100%;
+    display: flex;   
+    flex-wrap: wrap;
+    padding: 10px 15px;
+}
+
+.cont{
+    width: 46%;
+    padding: 10px 15px;
+
+}
+
+.img-product{
+    width: 100%;
+}
+
+.img-product img{
+    width: 100%;
+}
+
+.texto-product{
+    width: 100%;
+    text-align: center;
+    
+}
+
+.n-product{
+    font-weight: 900;
+    color: gray;
+    font-size: 30px;
+}
+
+.p-product{
+    font-weight: 900;
+    color: black;
+    font-size: 30px;
+}
