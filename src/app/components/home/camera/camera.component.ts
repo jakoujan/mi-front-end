@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { VisionService } from 'src/app/services/vision.service';
 
 @Component({
@@ -8,47 +8,49 @@ import { VisionService } from 'src/app/services/vision.service';
     styleUrls: ['camera.component.scss']
 })
 
-export class CameraComponent implements OnInit{
-    formCamera: FormGroup
+export class CameraComponent implements OnInit {
+    formCamera: FormGroup;
+    hidden: boolean = false;
     foto = {
         hash: null
     }
-    products:any
+    products: any
 
     constructor(
-        private fb : FormBuilder,
-        private visionService : VisionService,
+        private fb: FormBuilder,
+        private visionService: VisionService,
         private cd: ChangeDetectorRef
-        ){
+    ) {
 
     }
 
-    ngOnInit(){
+    ngOnInit() {
         this.formCamera = this.fb.group({
             hash: [null, [Validators.required]]
         })
     }
-    onFileSelected(valor){
+    onFileSelected(valor) {
         console.log(valor)
         this.visionService.recognize(valor).then(response => {
-                if(response){
-                    this.products = response.fields.products
-                    console.log('response: ',response)
-                    console.log('Productos: ', this.products)
+            if (response) {
+                this.hidden = true;
+                this.products = response.fields.products
+                console.log('response: ', response)
+                console.log('Productos: ', this.products)
 
-                }else{
-                    console.log('no llega')
-                }
+            } else {
+                console.log('no llega')
             }
+        }
         )
     }
-    onFileChange(event){
+    onFileChange(event) {
         let reader = new FileReader();
 
-        if(event.target.files && event.target.files.length){
+        if (event.target.files && event.target.files.length) {
             const [file] = event.target.files;
             reader.readAsDataURL(file);
-        
+
             reader.onload = () => {
 
                 let str = reader.result;

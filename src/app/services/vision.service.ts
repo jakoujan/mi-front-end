@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IResponse } from 'src/app/entity/response';
 import { IRecognize } from '../entity/recognize';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class VisionService {
-  url: string = 'http://10.0.2.125:8080/vision/recognize'
+  url: string = environment.url + '/vision/recognize'
 
   constructor(private http: HttpClient) { }
   httpOptions = {

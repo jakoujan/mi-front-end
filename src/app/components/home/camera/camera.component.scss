@@ -1,13 +1,37 @@
 #event{
     display: none !important;
 }
+div.container-fluid div.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+div.scroller {
+    height: 711px;
+    overflow: scroll;
+}
 .card{
     width: 100%;
+    text-align: center;
+    margin-top: 10px; 
+}
+
+.card p.description {
+    font-weight: 900;
+    font-size: 15px;
+    margin: 20px;
+    text-transform: uppercase;
+}
+
+.card img {
+    max-width: 250px;
+    margin: 10px 0 0 0;
 }
 .contenedor{
     width: 100%;
     border: 1px solid;
     position: relative;
+    min-height: 250px;
+    margin-top: 10px;
     i{
         position: absolute;
         top: 50%;

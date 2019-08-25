@@ -1,6 +1,5 @@
+<div class="titulo">Promociones del mes en tu tienda</div>
 <div class="container">
-
-  
   <div class="cont" *ngFor="let product of products">
       <div class="img-product"> 
           <img src="{{product.imageUrl}}" alt="">
@@ -10,5 +9,4 @@
           <p class="p-product">{{product.price | currency}}</p>
       </div>
   </div>
-
 </div>

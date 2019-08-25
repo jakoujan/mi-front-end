@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IResponse } from 'src/app/entity/response';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductCatalogService {
 
-  url: string = 'http://10.0.2.125:8080/product/catalog'
+  url: string = environment.url + '/product/catalog'
 
   constructor(private http: HttpClient) { }
   httpOptions = {
