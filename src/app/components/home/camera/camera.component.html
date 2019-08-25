@@ -24,8 +24,7 @@
                         <p class="price">Precio: {{item.price | currency }}</p>
                         <p class="color">Color: {{item.color}}</p>
                         <div class="buttons">
-                            <button class="credit">Solicitar credito</button>
-                            <button class="cash" (click)="buyProduct(item)">Comprar</button>
+                            <button class="buy" (click)="buyProduct(item)">Comprar</button>
                         </div>
                     </mat-card-content>
                 </mat-card>

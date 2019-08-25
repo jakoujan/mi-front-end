@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersistenceModule } from 'angular-persistence';
+import { CreditRequestComponent } from './components/credit-request/credit-request.component';
 
 //services
 
@@ -11,7 +12,8 @@ import { PersistenceModule } from 'angular-persistence';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreditRequestComponent
   ],
   imports: [
     BrowserModule,
