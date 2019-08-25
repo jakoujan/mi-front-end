@@ -23,6 +23,6 @@ export class MenuComponent implements OnInit {
 
     callProductCatalog() {
         console.log('me clickeaste');
-        this.router.navigate(['/productos'])
+        this.router.navigate(['/home/productos'])
     }
 }

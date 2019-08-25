@@ -3,15 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductCatalogComponent } from './components/product-catalog/product-catalog.component';
 //services
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProductCatalogComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

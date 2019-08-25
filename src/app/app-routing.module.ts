@@ -37,7 +37,8 @@ const routes: Routes = [
       { path: '', component: IndexComponent },
       { path: 'productos', component: ProductCatalogComponent }
     ]
-  }
+  },
+  { path: 'productos', component: ProductCatalogComponent }
 
 ];
 
@@ -71,8 +72,7 @@ const routes: Routes = [
     HeaderComponent,
     LogoComponent,
     MenuComponent,
-    CameraComponent,
-    ProductCatalogComponent
+    CameraComponent
   ],
   providers: [
     LoginService,
