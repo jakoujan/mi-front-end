@@ -16,6 +16,7 @@ export class CameraComponent implements OnInit{
     }
     hidden:boolean = false
     products:any
+    msj:string
 
     constructor(
         private fb : FormBuilder,
