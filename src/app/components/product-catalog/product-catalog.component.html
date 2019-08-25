@@ -1,3 +1,14 @@
-<p>
-  product-catalog works!
-</p>
+<div class="container">
+
+  
+  <div class="cont" *ngFor="let product of products">
+      <div class="img-product"> 
+          <img src="{{product.imageUrl}}" alt="">
+      </div>
+      <div class="texto-product">
+          <p class="n-product">{{product.description}}</p>
+          <p class="p-product">${{product.price | currency}}</p>
+      </div>
+  </div>
+
+</div>

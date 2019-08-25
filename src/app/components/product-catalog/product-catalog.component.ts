@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductCatalogService } from 'src/app/services/product-catalog.service';
+import { IProduct } from 'src/app/entity/product';
 
 @Component({
   selector: 'app-product-catalog',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCatalogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductCatalogService) {
+
+  
+  }
+
+  products: Array<IProduct>;
 
   ngOnInit() {
+    this.productService.catalog().then(response => {
+      this.products = response.fields.products;
+    })
   }
 
 }

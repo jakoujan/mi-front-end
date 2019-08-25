@@ -22,6 +22,7 @@ import { MenuComponent } from './common/menu/menu.component';
 import { CameraComponent } from './components/home/camera/camera.component';
 import { VisionService } from './services/vision.service';
 import { ProductCatalogService } from './services/product-catalog.service';
+import { ProductCatalogComponent } from './components/product-catalog/product-catalog.component';
 
 
 
@@ -30,7 +31,8 @@ const routes: Routes = [
   {
     path: 'home', component: HomeComponent,
     children: [
-      { path: '', component: IndexComponent }
+      { path: '', component: IndexComponent },
+      { path: 'productos', component: ProductCatalogComponent }
     ]
   }
 
@@ -44,7 +46,8 @@ const routes: Routes = [
     HeaderComponent,
     LogoComponent,
     MenuComponent,
-    CameraComponent
+    CameraComponent,
+    ProductCatalogComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +67,8 @@ const routes: Routes = [
     HeaderComponent,
     LogoComponent,
     MenuComponent,
-    CameraComponent
+    CameraComponent,
+    ProductCatalogComponent
   ],
   providers: [
     LoginService,

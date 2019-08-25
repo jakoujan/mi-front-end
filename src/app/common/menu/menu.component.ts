@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 
 export class MenuComponent implements OnInit {
-    constructor() {
+    constructor(private router: Router) {
 
     }
 
@@ -22,6 +23,6 @@ export class MenuComponent implements OnInit {
 
     callProductCatalog() {
         console.log('me clickeaste');
-        this.router.navigate(['/home'])
+        this.router.navigate(['/productos'])
     }
 }
