@@ -1,12 +1,15 @@
 <div class="titulo">Promociones del mes en tu tienda</div>
 <div class="container">
-  <div class="cont" *ngFor="let product of products">
-      <div class="img-product"> 
-          <img src="{{product.imageUrl}}" alt="">
-      </div>
-      <div class="texto-product">
-          <p class="n-product">{{product.description}}</p>
-          <p class="p-product">{{product.price | currency}}</p>
-      </div>
-  </div>
+    <div class="cont" *ngFor="let product of products">
+        <div class="img-product">
+            <img src="{{product.imageUrl}}" alt="">
+        </div>
+        <div class="texto-product">
+            <p class="n-product">{{product.description}}</p>
+            <p class="p-product">{{product.price | currency}}</p>
+        </div>
+        <div class="buttons">
+            <button class="buy" (click)="buyProduct(product)">Comprar</button>
+        </div>
+    </div>
 </div>
