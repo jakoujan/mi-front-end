@@ -13,6 +13,7 @@ export class CameraComponent implements OnInit{
     foto = {
         hash: null
     }
+    hidden:boolean = false
     products:any
 
     constructor(
@@ -35,6 +36,7 @@ export class CameraComponent implements OnInit{
                     this.products = response.fields.products
                     console.log('response: ',response)
                     console.log('Productos: ', this.products)
+                    this.hidden = true
 
                 }else{
                     console.log('no llega')

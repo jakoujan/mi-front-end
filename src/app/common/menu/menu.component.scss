@@ -1,8 +1,9 @@
 .menu{
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: -1px;
     width: 100%;
     border-top: .5px solid gray;
+    background-color: white;
     nav{
         width: 100%;
         padding: 10px 0;
