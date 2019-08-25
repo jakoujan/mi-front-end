@@ -43,7 +43,7 @@ const routes: Routes = [
       { path: 'productos', component: ProductCatalogComponent },
       { path: 'producto/comprar', component: BuyProductComponent },
       { path: 'producto/comprar/qr', component: QrComponent },
-      { path: 'financiamiento', component: FinanciamientoComponent },
+      { path: 'producto/comprar/financiamiento', component: FinanciamientoComponent },
       { path: 'customer/profile', component: CustomerProfileComponent }
 
     ]
