@@ -26,6 +26,7 @@ import { VisionService } from './services/vision.service';
 import { ProductCatalogService } from './services/product-catalog.service';
 import { ProductCatalogComponent } from './components/product-catalog/product-catalog.component';
 import { BuyProductComponent } from './components/buy-product/buy-product.component';
+import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
 
 
 
@@ -36,7 +37,8 @@ const routes: Routes = [
     children: [
       { path: '', component: IndexComponent },
       { path: 'productos', component: ProductCatalogComponent },
-      { path: 'producto/comprar', component: BuyProductComponent }
+      { path: 'producto/comprar', component: BuyProductComponent },
+      { path: 'customer/profile', component: CustomerProfileComponent }
     ]
   }
 
@@ -52,7 +54,8 @@ const routes: Routes = [
     MenuComponent,
     CameraComponent,
     ProductCatalogComponent,
-    BuyProductComponent
+    BuyProductComponent,
+    CustomerProfileComponent
   ],
   imports: [
     CommonModule,

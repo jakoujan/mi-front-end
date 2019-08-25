@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,11 +20,14 @@ export class MenuComponent implements OnInit {
         this.router.navigate(['/home']).then(res => {
             document.getElementById('event').click();
         });
-        
+
     }
 
     callProductCatalog() {
-        console.log('me clickeaste');
         this.router.navigate(['/home/productos'])
+    }
+
+    callCustomerProfile() {
+        this.router.navigate(['/home/customer/profile'])
     }
 }
