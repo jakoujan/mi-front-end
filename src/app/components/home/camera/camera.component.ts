@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { VisionService } from 'src/app/services/vision.service';
 import { Router } from '@angular/router';
+import { IProduct } from 'src/app/entity/product';
+import { PersistenceService, StorageType } from 'angular-persistence';
 
 @Component({
     selector: 'camera',
@@ -21,7 +23,8 @@ export class CameraComponent implements OnInit {
         private fb: FormBuilder,
         private visionService: VisionService,
         private cd: ChangeDetectorRef,
-        private router: Router
+        private router: Router,
+        private persistenceService: PersistenceService
     ) {
 
     }
@@ -74,6 +77,11 @@ export class CameraComponent implements OnInit {
                 this.onFileSelected(this.foto)
             }
         }
+    }
+
+    buyProduct(product: IProduct) {
+        this.persistenceService.set('product', product, {type: StorageType.SESSION, oneUse: true});
+        this.router.navigate(['/home/producto/comprar']);
     }
 
 }

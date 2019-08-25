@@ -19,7 +19,7 @@
                         <p class="price">${{item.price}}</p>
                         <p class="color">Color: {{item.color}}</p>
                         <div class="buttons">
-                            <button>Comprar</button>
+                            <button (click)="buyProduct(item)">Comprar</button>
                             <button>Solicitar credito</button>
                         </div>
                     </mat-card-content>
