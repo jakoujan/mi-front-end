@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { VisionService } from 'src/app/services/vision.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'camera',
@@ -19,7 +20,8 @@ export class CameraComponent implements OnInit{
     constructor(
         private fb : FormBuilder,
         private visionService : VisionService,
-        private cd: ChangeDetectorRef
+        private cd: ChangeDetectorRef,
+        private router : Router
         ){
 
     }
@@ -29,6 +31,11 @@ export class CameraComponent implements OnInit{
             hash: [null, [Validators.required]]
         })
     }
+
+    activeCamera(){
+        document.getElementById('event').click()
+    }
+
     onFileSelected(valor){
         console.log(valor)
         this.visionService.recognize(valor).then(response => {

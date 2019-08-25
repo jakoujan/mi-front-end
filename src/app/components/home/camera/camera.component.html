@@ -4,21 +4,22 @@
 <div class="container">
     <div class="row" [hidden]="hidden">
         <div class="col-12">
-            <div class="contenedor">
+            <div class="contenedor" (click)="activeCamera()">
                 <i class="fa fa-camera"></i>
             </div>
         </div>
     </div>
-    <div class="row" *ngFor="let item of products">
-        <div class="col-12">
-            <mat-card class="card">
-                <img mat-card-image [src]="item.imageUrl" alt="Producto">
-                <mat-card-content>
+    <div class="row">
+        <div class="col-6" *ngFor="let item of products">
+            <div class="card">
+                <div class="image">
+                    <img [src]="item.imageUrl" alt="products">
+                </div>
+                <div class="content">
                     <p>{{item.description}}</p>
                     <p>${{item.price}}</p>
-                    <p>Color: {{item.color}}</p>
-                </mat-card-content>
-            </mat-card>
+                </div>
+            </div>
         </div>
     </div>
 </div>

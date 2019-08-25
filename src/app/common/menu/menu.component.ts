@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
 
     }
     callCamera() {
-        console.log('me clickeaste');
+        this.router.navigate(['/home'])
         document.getElementById('event').click()
     }
 
