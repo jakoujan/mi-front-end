@@ -8,7 +8,7 @@ div.container-fluid div.row {
 }
 
 div.scroller {
-    height: 568px;
+    height: 510px;
     overflow: scroll;
 }
 
@@ -19,6 +19,13 @@ div.scroller {
 }
 
 .card p.description {
+    font-weight: 900;
+    font-size: 15px;
+    margin: 20px;
+    text-transform: uppercase;
+}
+
+.card p.price {
     font-weight: 900;
     font-size: 15px;
     margin: 20px;
@@ -41,14 +48,14 @@ div.scroller {
 
     i {
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 3rem;
     }
 }
 
-button {
+button.credit {
     display: block;
     background-color: #e1251b;
     text-align: center;
@@ -58,4 +65,36 @@ button {
     padding: 5px 10px;
     margin: 0 auto 5px auto;
     width: 200px;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+button.cash {
+    display: block;
+    border: 1px solid #095225;
+    text-align: center;
+    border-radius: 0;
+    padding: 5px 10px;
+    margin: 10px auto 5px auto;
+    width: 200px;
+    color: #095225;
+    background: #fff;
+}
+
+p.instructions {
+    padding: 10px;
+    text-align: center;
+    /* margin: 10px; */
+    position: absolute;
+    top: 49%;
+    left: 0;
+    width: 100%
+}
+
+div.titulo {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 20px 0 10px 0;
 }
