@@ -1,34 +1,38 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 //services
-import { LoginService } from './services/service-login/login.service'
+import { LoginService } from './services/service-login/login.service'
 //Angular material
-import { 
+import {
   MatFormFieldModule,
   MatInputModule
- } from '@angular/material';
+} from '@angular/material';
 //Components
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { IndexComponent } from './components/home/index/index.component';
-import { HeaderComponent } from './common/header/header.component';
+import { IndexComponent } from './components/home/index/index.component';
+import { HeaderComponent } from './common/header/header.component';
 import { LogoComponent } from './common/logo/logo.component';
 import { MenuComponent } from './common/menu/menu.component';
 import { CameraComponent } from './components/home/camera/camera.component';
+import { VisionService } from './services/vision.service';
+import { ProductCatalogService } from './services/product-catalog.service';
 
 
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'home', component: HomeComponent, 
+  {
+    path: 'home', component: HomeComponent,
     children: [
-      {path: '', component: IndexComponent}
-    ]}
+      { path: '', component: IndexComponent }
+    ]
+  }
 
 ];
 
@@ -37,7 +41,7 @@ const routes: Routes = [
     HomeComponent,
     LoginComponent,
     IndexComponent,
-    HeaderComponent,
+    HeaderComponent,
     LogoComponent,
     MenuComponent,
     CameraComponent
@@ -57,13 +61,15 @@ const routes: Routes = [
     HomeComponent,
     LoginComponent,
     IndexComponent,
-    HeaderComponent,
+    HeaderComponent,
     LogoComponent,
     MenuComponent,
     CameraComponent
   ],
   providers: [
-     LoginService
+    LoginService,
+    VisionService,
+    ProductCatalogService
   ]
 })
 export class AppRoutingModule { }

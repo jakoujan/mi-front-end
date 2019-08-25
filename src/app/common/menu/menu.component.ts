@@ -7,16 +7,21 @@ import { Component, OnInit, ViewChild } from '@angular/core';
     styleUrls: ['menu.component.scss']
 })
 
-export class MenuComponent implements OnInit{
-    constructor(){
+export class MenuComponent implements OnInit {
+    constructor() {
 
     }
 
-    ngOnInit(){
+    ngOnInit() {
 
     }
-    callCamera(){
+    callCamera() {
         console.log('me clickeaste');
         document.getElementById('event').click()
+    }
+
+    callProductCatalog() {
+        console.log('me clickeaste');
+        this.router.navigate(['/home'])
     }
 }
