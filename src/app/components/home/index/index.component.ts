@@ -13,6 +13,6 @@ export class IndexComponent implements OnInit{
 
     }
     ngOnInit(){
-        document.getElementById('event').click()
+
     }
 }
