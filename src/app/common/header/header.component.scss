@@ -1,0 +1,13 @@
+header {
+    width: 100%;
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+    .logo {
+        width: 130px;
+        padding: 5px 0;
+        img {
+            width: 100%;
+        }
+    }
+}

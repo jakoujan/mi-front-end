@@ -1,0 +1,29 @@
+section{
+    width: 100%;
+    height: 95vh;
+    position: relative;
+    background-color: #ffdc20;
+    .login{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        form{
+            .full-width{
+                width: 100%;
+            }
+            button{
+                display: block;
+                background-color: #e1251b;
+                text-align: center;
+                border: none;
+                border-radius: 0;
+                color: white;
+                padding: 5px 10px;
+                margin: auto;
+                width: 200px;
+            }
+        }
+    }
+    
+}

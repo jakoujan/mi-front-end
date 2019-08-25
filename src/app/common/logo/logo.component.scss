@@ -1,0 +1,17 @@
+.logo {
+    width: 200px;
+    margin: 2rem auto;
+    position: relative;
+    h1 {
+        font-size: 2.1rem;
+        font-weight: 900;
+        color: #e1251b;
+        position: absolute;
+        top: -28px;
+        left: 50px;
+    }
+    img{
+        display: block;
+        width: 100%;
+    }
+}
